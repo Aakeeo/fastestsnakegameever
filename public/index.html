@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Authentication Container -->
+    <div id="auth-container">
+      <div id="form-container">
+        <div id="logo">
+          <h1>Snake Game</h1>
+        </div>
+        <div id="register-form" class="auth-form">
+          <h2>Create an Account</h2>
+          <input
+            type="text"
+            id="register-username"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Password"
+            required
+          />
+          <button id="register-button">Sign Up</button>
+          <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
+        </div>
+        <div id="login-form" class="auth-form" style="display: none">
+          <h2>Welcome Back</h2>
+          <input
+            type="text"
+            id="login-username"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Password"
+            required
+          />
+          <button id="login-button">Log In</button>
+          <p>
+            Don't have an account? <a href="#" id="show-register">Sign Up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div id="dashboard-container" style="display: none">
+      <div id="dashboard">
+        <h2>Welcome, <span id="username-display"></span>!</h2>
+        <p>Your Highest Score: <span id="user-high-score">0</span></p>
+        <p>Overall Highest Score: <span id="overall-high-score">0</span></p>
+        <button id="start-game-button">Start Game</button>
+        <button id="profile-button">Profile</button>
+        <button id="logout-button">Logout</button>
+      </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container" style="display: none">
+      <div id="scoreboard" class="green-theme">
+        <p>Current Score: <span id="current-score">0</span></p>
+        <button id="pause-button">Pause</button>
+        <button id="resume-button" style="display: none">Resume</button>
+      </div>
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
+    </div>
+
+    <!-- Game Over Container -->
+    <div id="game-over-container" style="display: none">
+      <div id="game-over">
+        <h2>Game Over</h2>
+        <p>Your Score: <span id="final-score">0</span></p>
+        <button id="restart-button">Back to Dashboard</button>
+      </div>
+    </div>
+
+    <!-- Profile Container -->
+    <div id="profile-container" style="display: none">
+      <div id="profile">
+        <h2>Profile</h2>
+        <p>Change Password</p>
+        <input
+          type="password"
+          id="new-password"
+          placeholder="New Password"
+          required
+        />
+        <button id="change-password-button">Change Password</button>
+        <button id="back-to-dashboard-button">Back to Dashboard</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
